@@ -5,13 +5,13 @@ import 'package:uuid/uuid.dart';
 import 'models/models.dart';
 
 class UserRepository {
-  User _user;
+  UserModel _user;
 
-  Future<User> getUser() async {
+  Future<UserModel> getUser() async {
     if (_user != null) return _user;
     return Future.delayed(
       const Duration(milliseconds: 300),
-          () => _user = User(Uuid().v4()),
+          () => _user = UserModel(Uuid().v4()),
     );
   }
 }
